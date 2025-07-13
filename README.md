@@ -88,3 +88,11 @@ x2  = 20
 x3  = 40
 x4  = 0
 ```
+
+---
+
+## Author
+```
+Aman Raj
+Github : AmanRaj367
+```
