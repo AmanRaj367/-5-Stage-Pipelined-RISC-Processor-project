@@ -50,3 +50,40 @@ The processor implements the following pipeline stages:
 ├── riscv_top_tb.v        # Testbench for simulation
 ├── riscywave.vcd         # Waveform output from simulation
 └── README.md             # You are here
+
+---
+
+## ▶ Simulation Guide
+###  Requirements
+- Icarus Verilog
+- GTKWave
+
+###  Steps to Simulate
+1. Compile the Verilog code:
+```bash
+iverilog -o riscv_test *.v
+```
+2. Run the simulation:
+```bash
+vvp riscv_test
+```
+3. View waveforms:
+```bash
+gtkwave riscywave.vcd
+
+---
+
+##  Sample Output on Terminal
+```=== Instruction Execution Trace ===
+Time: 10ns | PC: 00000000 | Instr: 00a00093 | rd: x1 | wb_data: 10
+Time: 15ns | PC: 00000004 | Instr: 01400113 | rd: x2 | wb_data: 20
+Time: 25ns | PC: 00000008 | Instr: 01e00193 | rd: x3 | wb_data: 30
+Time: 35ns | PC: 0000000c | Instr: 003081b3 | rd: x3 | wb_data: 40
+Time: 45ns | PC: 00000010 | Instr: 40210233 | rd: x4 | wb_data: 0
+==== Register File Dump After Execution ====        
+x0  = 0
+x1  = 10
+x2  = 20
+x3  = 40
+x4  = 0
+```
